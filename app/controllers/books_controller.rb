@@ -12,11 +12,12 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path, notice: "新增成功囉"
     else
-      render new_book_path
+      render :new
     end
   end
 
   def show
+    @book = Book.find(params[:id])
   end
 
   def edit
@@ -28,14 +29,14 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to books_path, notice: "更新成功囉"
     else
-      render edit_book_path, notice: "更新失敗囉"
+      render :edit, notice: "更新失敗囉"
     end
   end
 
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_path notice:"刪除成功囉"
+    redirect_to books_path ,notice:"刪除成功囉"
   end
 
   def book_params

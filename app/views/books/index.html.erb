@@ -12,7 +12,9 @@
 <%= link_to '刪除' ,book_path(book),
                   method: :delete,
                   data: { confirm: '你敢?'} %>
-<%= book.title %>
+
+
+<%= link_to book.title , book_path(book) %>
 
 </li>
 <% end %>
