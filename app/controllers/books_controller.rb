@@ -24,6 +24,12 @@ class BooksController < ApplicationController
   end
 
   def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to books_path, notice: "更新成功囉"
+    else
+      render edit_book_path, notice: "更新失敗囉"
+    end
   end
 
   def destory
