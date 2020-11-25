@@ -32,7 +32,10 @@ class BooksController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path notice:"刪除成功囉"
   end
 
   def book_params

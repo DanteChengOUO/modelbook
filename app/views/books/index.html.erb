@@ -1,19 +1,17 @@
 <h1>Model book 首頁</h1>
 
 <%= link_to "新增書籍", new_book_path %>
-
+<br><br>
 <ul class="booklist">
 <% @books.each do |book| %>
+
 <li>
-
-
-<br>
 <br>
 
 <%= link_to '編輯' ,edit_book_path(book) %>
 <%= link_to '刪除' ,book_path(book),
                   method: :delete,
-                  data: { confirm: '你確定?'} %>
+                  data: { confirm: '你敢?'} %>
 <%= book.title %>
 
 </li>
