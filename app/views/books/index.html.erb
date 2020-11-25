@@ -1,0 +1,17 @@
+<h1>Model book 首頁</h1>
+
+<%= link_to "新增書籍", new_book_path %>
+
+<ul class="booklist">
+<% @books.each do |book| %>
+<li>
+
+<%= book.title %>
+
+
+
+</li>
+<% end %>
+
+
+</ul>
