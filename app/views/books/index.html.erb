@@ -6,9 +6,15 @@
 <% @books.each do |book| %>
 <li>
 
+
+<br>
+<br>
+
+<%= link_to '編輯' ,edit_book_path(book) %>
+<%= link_to '刪除' ,book_path(book),
+                  method: :delete,
+                  data: { confirm: '你確定?'} %>
 <%= book.title %>
-
-
 
 </li>
 <% end %>
